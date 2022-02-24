@@ -21,13 +21,22 @@ function randomY(d,i){
 
 function gotData(incomingData){
     console.log("the incoming data is:" , incomingData)
-    
-    viz.selectAll("circle").data(incomingData).enter().append("circle")
-                                                      . attr("cx", randomX)
+    //                     0                 7              7
+    viz.selectAll(".blackCircles").data(incomingData).enter().append("circle")
+                                                      . attr("class", "blackCircles")
+                                                      . attr("cx", randomX) //. attr("cx", () =>  Math.random()*400)
                                                       . attr("cy", randomY)
                                                       . attr("r", 10)
                                                       . attr("fill", "black")
     ;
+
+    viz.selectAll(".redCircles").data(incomingData).enter().append("circle")
+                                                             . attr("class", "redCircles")
+                                                             . attr("cx", randomX) //. attr("cx", () =>  Math.random()*400)
+                                                             . attr("cy", randomY)
+                                                             . attr("r", 10)
+                                                             . attr("fill", "red")
+;
 
 }
 
