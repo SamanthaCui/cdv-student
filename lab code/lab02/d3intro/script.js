@@ -52,7 +52,7 @@ viz.attr("height", 600);
 
 //load json file
 
-function xPos(d, i){
+function xPos(d, i){ //d is the detailed data, i is the index of the data (0,1,2,3......)
     // console.log("D3 passed first", d, "!");
     // console.log("D3 passed second", i, "!");
     return 50 + i*100;
