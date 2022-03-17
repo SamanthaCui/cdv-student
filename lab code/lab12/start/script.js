@@ -50,6 +50,7 @@ function gotData(incomingData){
   // the graph goes. Clean DOM, happy project!
   let vizGroup = viz.append("g").attr("class", "vizGroup");
 
+  function step1(){
   // For now we visualize the first version of the dataset
   let dataToShow = incomingData[0];
   console.log("the data:", dataToShow);
@@ -79,10 +80,90 @@ function gotData(incomingData){
     return "translate("+x+", "+y+")"
   }
   datagroups.attr("transform", getGroupLocation)
-
-
 }
 
+
+function step2(){
+  // For now we visualize the first version of the dataset
+  let dataToShow = incomingData[1];
+  console.log("the data:", dataToShow);
+
+  //                                       4                 4
+  let datagroups = vizGroup.selectAll(".datagroup").data(dataToShow)
+    // .enter()
+    // .append("g")
+    //   .attr("class", "datagroup")
+  ;
+
+  // datagroups.append("circle")
+  //   .attr("r", 30)
+  //   .attr("fill", "red")
+  // ;
+  // datagroups.append("text")
+  //   .text(function(d, i){
+  //     return d.name;
+  //   })
+  //   .attr("x", -17)
+  //   .attr("y", 17)
+  //   .attr("font-family", "sans-serif")
+  //   .attr("font-size", "3em")
+  //   .attr("fill", "white")
+  // ;
+
+  function getGroupLocation(d, i){
+    let x = xScale(d.x);
+    let y = yScale(d.y);
+    return "translate("+x+", "+y+")"
+  }
+  datagroups.attr("transform", getGroupLocation)
+}
+
+
+function step3(){
+  // For now we visualize the first version of the dataset
+  let dataToShow = incomingData[2];
+  console.log("the data:", dataToShow);
+
+  //                                       4                 4
+  let datagroups = vizGroup.selectAll(".datagroup").data(dataToShow)
+    // .enter()
+    // .append("g")
+    //   .attr("class", "datagroup")
+  ;
+
+  // datagroups.append("circle")
+  //   .attr("r", 30)
+  //   .attr("fill", "red")
+  // ;
+  // datagroups.append("text")
+  //   .text(function(d, i){
+  //     return d.name;
+  //   })
+  //   .attr("x", -17)
+  //   .attr("y", 17)
+  //   .attr("font-family", "sans-serif")
+  //   .attr("font-size", "3em")
+  //   .attr("fill", "white")
+  // ;
+
+  function getGroupLocation(d, i){
+    let x = xScale(d.x);
+    let y = yScale(d.y);
+    return "translate("+x+", "+y+")"
+  }
+  datagroups.attr("transform", getGroupLocation)
+}
+
+
+
+
+
+
+document.getElementById("step1").addEventListener("click",step1);
+document.getElementById("step2").addEventListener("click",step2);
+document.getElementById("step3").addEventListener("click",step3);
+
+}
 
 
 d3.json("data.json").then(gotData);

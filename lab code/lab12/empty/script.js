@@ -23,9 +23,13 @@ function gotData(incomingData){
   let minX = 0;
   let maxX = 145;
   let minY = 0;
-  let maxY = 140
+  let maxY = 140;
 
 
+  // let xScale = scaleLinear().domain([minX,maxX]).range([xPadding,w-xPadding]);
+  // let xAxisGroup = viz.append("g").attr('class','xaxis');
+  // let xAxis = d3.axisBottom(xscale);
+  // xAxisGroup.call(xAxis);
 
 }
 
